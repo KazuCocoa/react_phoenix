@@ -7,19 +7,26 @@ import {Socket} from "phoenix"
 
 $(function() {
   var App = React.createClass( {
-    getInitialState: function () {
+    getInitialState: function() {
       return { message: "" }
     },
     updateMessage: function(e) {
       this.setState({ message: e.target.value });
     },
+
     render: function() {
-      return(
+      return (
         <div>
           <input type="text" onChange={this.updateMessage} />
-          <p>{this.state.message}</p>
+          <Message message={this.state.message} />
         </div>
       );
+    }
+  });
+
+  var Message = React.createClass({
+    render: function() {
+      return <p>{this.props.message}</p>;
     }
   });
 
