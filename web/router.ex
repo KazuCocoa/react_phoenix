@@ -19,6 +19,12 @@ defmodule ReactPhoenix.Router do
     get "/hello_world", HelloWorldController, :index
   end
 
+  scope "/api", ReactPhoenix do
+    pipe_through :api
+
+    get "/", PageController, :index
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", ReactPhoenix do
   #   pipe_through :api

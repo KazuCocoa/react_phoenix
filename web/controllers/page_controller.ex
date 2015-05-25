@@ -4,6 +4,7 @@ defmodule ReactPhoenix.PageController do
   plug :action
 
   def index(conn, _params) do
-    render conn, "index.html"
+    # render conn, "index.html"
+    json conn, %{id: "sample"}
   end
 end
